@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.dakotapease.tabletnav.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "tabletnav.refmap.json",
+  "mixins": [],
+  "client": [
+    "NavTableBlockMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

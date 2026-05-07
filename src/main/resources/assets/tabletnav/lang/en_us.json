@@ -1,0 +1,10 @@
+{
+  "item.tabletnav.tablet": "Navigation Tablet",
+  "itemGroup.tabletnav.main": "Advanced Nav Table",
+
+  "screen.tabletnav.tablet": "Navigation Tablet",
+  "field.tabletnav.x": "X",
+  "field.tabletnav.z": "Z",
+  "button.tabletnav.enabled": "ON",
+  "button.tabletnav.disabled": "OFF"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "RBR",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "minecraft:copper_ingot" },
+    "R": { "item": "minecraft:redstone" },
+    "B": { "item": "minecraft:book" }
+  },
+  "result": {
+    "id": "tabletnav:tablet",
+    "count": 1
+  }
+}

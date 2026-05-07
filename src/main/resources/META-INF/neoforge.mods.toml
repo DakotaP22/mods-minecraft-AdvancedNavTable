@@ -26,21 +26,13 @@ ${mod_description}
     ordering="NONE"
     side="BOTH"
 
-# Create dependency (required — this mod integrates with Create)
+# Simulated dependency (required — this mod is an addon for Simulated)
 [[dependencies.${mod_id}]]
-    modId="create"
+    modId="simulated"
     type="required"
-    versionRange="[6.0.0,)"
-    ordering="AFTER"
-    side="BOTH"
-
-# Minecolonies dependency (required — this mod integrates with Minecolonies)
-[[dependencies.${mod_id}]]
-    modId="minecolonies"
-    type="required"
-    versionRange="[1.1.1300,)"
+    versionRange="[1,)"
     ordering="AFTER"
     side="BOTH"
 
 [[mixins]]
-    config="create_colonies.mixins.json"
+    config="tabletnav.mixins.json"

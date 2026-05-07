@@ -1,0 +1,8 @@
+Drop the Simulated mod dev JAR (e.g. simulated-1.x.x-dev.jar) into this folder.
+
+build.gradle picks it up via:
+  compileOnly fileTree(dir: 'lib', include: '*.jar')
+  localRuntime fileTree(dir: 'lib', include: '*.jar')
+
+The JAR is used at compile time (for API types and mixin targets) and at
+dev-run time, but it is NOT bundled into the published tabletnav artifact.
