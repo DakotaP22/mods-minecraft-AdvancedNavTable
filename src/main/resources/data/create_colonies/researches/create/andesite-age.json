@@ -1,0 +1,29 @@
+{
+    "branch": "create_colonies:create",
+    "autostart": false,
+    "costs": [
+        {
+            "item": "minecraft:iron_nugget",
+            "quantity": 2
+        },
+        {
+            "item": "minecraft:andesite",
+            "quantity": 2
+        }
+    ],
+    "effects": [
+        {
+            "id": "create_colonies:effects/andesite-alloy-unlock",
+            "level": 1
+        }
+    ],
+    "exclusiveChildResearch": false,
+    "hidden": false,
+    "instant": false,
+    "name": "Andesite Alloy",
+    "no-reset": true,
+    "requirements": [],
+    "researchLevel": 1,
+    "sortOrder": 1,
+    "subtitle": "Unlock andesite alloy recipe for the blacksmith."
+}

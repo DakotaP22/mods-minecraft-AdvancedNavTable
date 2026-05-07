@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.example.create_colonies.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "create_colonies.refmap.json",
+  "mixins": [
+    "BeltBlockEntityFakeLevelMixin",
+    "ItemVaultBlockEntityFakeLevelMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

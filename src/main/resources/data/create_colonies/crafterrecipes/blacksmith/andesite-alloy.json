@@ -1,0 +1,13 @@
+{
+    "type": "recipe",
+    "crafter": "blacksmith_crafting",
+    "inputs": [
+        { "item": "minecraft:andesite", "count": 2 },
+        { "item": "minecraft:iron_nugget", "count": 2 }
+    ],
+    "result": { "id": "create:andesite_alloy" },
+    "count": 2,
+    "intermediate": "minecraft:air",
+    "research-id": "create_colonies:create/andesite-age",
+    "show-tooltip": true
+}

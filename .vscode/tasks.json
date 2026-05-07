@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Mod",
+      "type": "shell",
+      "command": "./gradlew build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy to Prism",
+      "type": "shell",
+      "command": "bash scripts/deploy-to-prism.sh",
+      "dependsOn": "Build Mod",
+      "dependsOrder": "sequence",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Dev Server (headless)",
+      "type": "shell",
+      "command": "./gradlew runServer",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

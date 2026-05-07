@@ -1,0 +1,46 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+    modId="${mod_id}"
+    version="${mod_version}"
+    displayName="${mod_name}"
+    description='''
+${mod_description}
+'''
+
+# NeoForge dependency (required)
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+# Minecraft dependency (required)
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+# Create dependency (required — this mod integrates with Create)
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="required"
+    versionRange="[6.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# Minecolonies dependency (required — this mod integrates with Minecolonies)
+[[dependencies.${mod_id}]]
+    modId="minecolonies"
+    type="required"
+    versionRange="[1.1.1300,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[mixins]]
+    config="create_colonies.mixins.json"

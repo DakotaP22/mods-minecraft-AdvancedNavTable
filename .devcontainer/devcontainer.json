@@ -1,0 +1,26 @@
+{
+  "name": "NeoForge 1.21.1 — Create Colonies",
+  "build": { "dockerfile": "Dockerfile" },
+  "mounts": [
+    "source=/mnt/c/Users/dakota/AppData/Roaming/PrismLauncher/instances/CreateColonies/minecraft/mods,target=/mnt/prism-mods,type=bind,consistency=delegated"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.import.gradle.enabled": true,
+        "java.import.gradle.wrapper.enabled": true
+      }
+    }
+  },
+  // Download the Gradle wrapper JAR (binary — not committed to git),
+  // make gradlew executable, then pre-cache all Gradle/NeoForge dependencies.
+  "postCreateCommand": "chmod +x gradlew && curl -fsSL -o gradle/wrapper/gradle-wrapper.jar https://github.com/NeoForgeMDKs/MDK-1.21.1-NeoGradle/raw/main/gradle/wrapper/gradle-wrapper.jar && ./gradlew --no-daemon dependencies"
+}
