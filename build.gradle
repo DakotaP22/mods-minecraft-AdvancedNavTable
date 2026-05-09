@@ -19,10 +19,17 @@ sourceSets.main.resources {
 }
 
 repositories {
-    // Local flat-dir repo for JARs in the lib/ folder.
-    flatDir {
-        dirs 'lib'
-    }
+    maven { url = "https://maven.ryanhcode.dev/releases" }
+    // Curios API
+    maven { url = "https://maven.theillusivec4.top/" }
+    // JEI
+    maven { url = "https://maven.blamejared.com/" }
+    // Create mod + Ponder
+    maven { url = "https://maven.createmod.net/" }
+    // Modrinth (Nature's Compass, Explorer's Compass, etc.)
+    maven { url = "https://api.modrinth.com/maven" }
+    // CC: Tweaked
+    maven { url = "https://maven.squiddev.cc/" }
 }
 
 base {
@@ -75,8 +82,8 @@ dependencies {
 
     // Dev-only dependency mods — visible at compile time (for mixins) and on the
     // dev run classpath, but NOT included in the published artifact.
-    compileOnly fileTree(dir: 'lib', include: '*.jar')
-    localRuntime fileTree(dir: 'lib', include: '*.jar')
+    compileOnly "dev.simulated_team.simulated:simulated-neoforge-1.21.1:1.2.1"
+    localRuntime "dev.simulated_team.simulated:simulated-neoforge-1.21.1:1.2.1"
 }
 
 tasks.withType(ProcessResources).configureEach {

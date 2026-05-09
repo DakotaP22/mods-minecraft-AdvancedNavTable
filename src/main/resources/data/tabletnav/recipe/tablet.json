@@ -1,14 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
-    "RBR",
-    " C "
+    "NGN",
+    "NCN",
+    "NRN"
   ],
   "key": {
-    "C": { "item": "minecraft:copper_ingot" },
-    "R": { "item": "minecraft:redstone" },
-    "B": { "item": "minecraft:book" }
+    "C": { "item": "minecraft:compass" },
+    "N": { "item": "minecraft:netherite_block" },
+    "G": { "item": "minecraft:gold_block" },
+    "B": { "item": "minecraft:redstone" }
   },
   "result": {
     "id": "tabletnav:tablet",

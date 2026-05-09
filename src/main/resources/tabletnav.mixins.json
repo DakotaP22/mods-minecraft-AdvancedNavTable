@@ -8,7 +8,9 @@
   "client": [
     "NavTableBlockMixin"
   ],
-  "server": [],
+  "server": [
+    "NavTableBlockServerMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

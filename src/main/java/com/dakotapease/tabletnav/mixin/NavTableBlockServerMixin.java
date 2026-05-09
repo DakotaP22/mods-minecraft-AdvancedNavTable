@@ -1,7 +1,6 @@
 package com.dakotapease.tabletnav.mixin;
 
 import com.dakotapease.tabletnav.content.TabletNavigationTarget;
-import com.dakotapease.tabletnav.content.screen.TabletScreen;
 import dev.simulated_team.simulated.content.blocks.nav_table.NavTableBlock;
 import dev.simulated_team.simulated.content.blocks.nav_table.NavTableBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -18,12 +17,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * Client-only mixin (declared in the "client" array of tabletnav.mixins.json).
- * Intercepts shift-right-click on the NavTable when a Tablet is slotted
- * and opens the tablet configuration screen.
+ * Server-side counterpart to NavTableBlockMixin. Cancels the vanilla
+ * useItemOn logic (which would eject the Tablet) when the client has
+ * opened the tablet configuration screen via a shift-right-click.
+ * The client mixin handles screen opening; this one simply prevents the
+ * server from dropping the item.
  */
 @Mixin(NavTableBlock.class)
-public class NavTableBlockMixin {
+public class NavTableBlockServerMixin {
 
     @Inject(method = "useItemOn", at = @At("HEAD"), cancellable = true, remap = false)
     private void tabletnav$onUseItemOn(
@@ -35,11 +36,6 @@ public class NavTableBlockMixin {
         if (!(level.getBlockEntity(blockPos) instanceof NavTableBlockEntity be)) return;
         if (!(be.getNavTableItem() instanceof TabletNavigationTarget)) return;
 
-        // This mixin is client-only so level.isClientSide() is always true here,
-        // but the guard makes intent explicit.
-        if (level.isClientSide()) {
-            TabletScreen.open(blockPos, be.getHeldItem());
-        }
         cir.setReturnValue(ItemInteractionResult.SUCCESS);
     }
 }

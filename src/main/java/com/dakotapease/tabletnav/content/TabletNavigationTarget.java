@@ -2,7 +2,7 @@ package com.dakotapease.tabletnav.content;
 
 import com.dakotapease.tabletnav.index.TabletDataComponents;
 import dev.simulated_team.simulated.content.blocks.nav_table.NavTableBlockEntity;
-import dev.simulated_team.simulated.navigation.NavigationTarget;
+import dev.simulated_team.simulated.content.blocks.nav_table.navigation_target.NavigationTarget;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -18,7 +18,7 @@ public class TabletNavigationTarget implements NavigationTarget {
     }
 
     @Override
-    public int getMaxRange() {
+    public float getMaxRange() {
         return 0; // uncapped
     }
 

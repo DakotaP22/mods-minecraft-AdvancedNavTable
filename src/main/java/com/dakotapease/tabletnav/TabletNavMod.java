@@ -4,12 +4,14 @@ import com.dakotapease.tabletnav.content.network.TabletUpdatePacket;
 import com.dakotapease.tabletnav.index.TabletDataComponents;
 import com.dakotapease.tabletnav.index.TabletItems;
 import com.dakotapease.tabletnav.index.TabletNavTargets;
+import dev.simulated_team.simulated.index.SimDataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -43,6 +45,12 @@ public class TabletNavMod {
         CREATIVE_TABS.register(modBus);
 
         modBus.addListener(TabletNavMod::registerPayloads);
+        modBus.addListener(TabletNavMod::modifyDefaultComponents);
+    }
+
+    private static void modifyDefaultComponents(ModifyDefaultComponentsEvent event) {
+        event.modify(TabletItems.TABLET.get(), builder ->
+            builder.set(SimDataComponents.TARGET, TabletNavTargets.TABLET.get()));
     }
 
     private static void registerPayloads(RegisterPayloadHandlersEvent event) {
